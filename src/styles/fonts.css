@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'InterDisplay';
+  src: url('../assets/fonts/InterDisplay-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'InterDisplay';
+  src: url('../assets/fonts/InterDisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'InterDisplay';
+  src: url('../assets/fonts/InterDisplay-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

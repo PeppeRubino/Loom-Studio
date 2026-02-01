@@ -1,0 +1,38 @@
+{
+  "spacing": {
+    "s1": 8,
+    "s2": 12,
+    "s3": 16,
+    "s4": 24,
+    "s5": 32,
+    "s6": 40
+  },
+  "radius": {
+    "small": 8,
+    "medium": 12,
+    "large": 16
+  },
+  "colors": {
+    "BG": "#FFFFFF",
+    "PANEL": "#F7F7F8",
+    "PANEL_2": "#F0F1F3",
+    "BORDER": "#E6E6E8",
+    "TEXT": "#111111",
+    "MUTED": "#5E5E5E",
+    "FAINT": "#7A7A7A",
+    "ACCENT": "#B11226",
+    "ACCENT_INK": "#FFFFFF",
+    "ACCENT_SOFT": "#F6D6DA",
+    "SUCCESS": "#1F7A3F",
+    "WARNING": "#B76B00",
+    "DANGER": "#C62828",
+    "INFO": "#1769AA"
+  },
+  "typography": {
+    "h1": 22,
+    "h2": 18,
+    "body": 15,
+    "caption": 13,
+    "mono": 12
+  }
+}
