@@ -3,8 +3,28 @@
   dataUrl: string;
 }
 
+const blobToDataUrl = (blob: Blob): Promise<string> =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+
 const toDataUrl = (canvas: HTMLCanvasElement, type: string, quality: number): Promise<string> =>
-  new Promise((resolve) => canvas.toBlob((b) => resolve(URL.createObjectURL(b!)), type, quality));
+  new Promise((resolve, reject) =>
+    canvas.toBlob(
+      (b) => {
+        if (!b) {
+          reject(new Error('Canvas blob not available'));
+          return;
+        }
+        blobToDataUrl(b).then(resolve).catch(reject);
+      },
+      type,
+      quality
+    )
+  );
 
 export const compressImage = async (
   file: File,
@@ -99,6 +119,6 @@ export const uploadImage = async (blob: Blob, opts?: { removeBackground?: boolea
       console.warn('Upload imgbb fallito, uso provider local', err);
     }
   }
-  const dataUrl = URL.createObjectURL(toUpload);
+  const dataUrl = await blobToDataUrl(toUpload);
   return { url: dataUrl, provider: 'local', uploadedAt: new Date().toISOString() };
 };

@@ -89,7 +89,7 @@ export const SettingsDrawer = ({ open, onClose }: SettingsDrawerProps) => {
               animate={{ x: 0 }}
               exit={{ x: 320 }}
               transition={{ duration: 0.18, ease: 'easeOut' }}
-              className="relative z-50 flex h-full w-[360px] flex-col gap-4 border-l border-[rgba(255,255,255,0.5)] bg-white/85 p-5 shadow-[0_30px_80px_-60px_rgba(15,23,42,0.55)] "
+              className="relative z-50 flex h-full w-[360px] flex-col gap-4 border-l border-[#e2e8f0] bg-white p-5 shadow-[0_30px_80px_-60px_rgba(15,23,42,0.55)]"
             >
             <header className="flex items-center justify-between">
               <div>
@@ -107,7 +107,7 @@ export const SettingsDrawer = ({ open, onClose }: SettingsDrawerProps) => {
               </button>
             </header>
 
-            <section className="rounded-2xl border border-[rgba(255,255,255,0.6)] bg-white/85 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.35)]">
+            <section className="rounded-2xl border border-[#e2e8f0] bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.35)]">
               <button
                 type="button"
                 onClick={() => setOpenCategories((v) => !v)}
@@ -133,7 +133,7 @@ export const SettingsDrawer = ({ open, onClose }: SettingsDrawerProps) => {
                     {categories.map((category) => (
                       <div
                         key={category}
-                        className="flex items-center justify-between rounded-2xl border border-[rgba(255,255,255,0.6)] bg-white/75 px-3 py-2 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.35)] "
+                        className="flex items-center justify-between rounded-2xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.35)]"
                       >
                         <p className="text-sm font-semibold text-[#0f172a]">{category}</p>
                         <button
@@ -150,7 +150,7 @@ export const SettingsDrawer = ({ open, onClose }: SettingsDrawerProps) => {
               )}
             </section>
 
-            <section className="rounded-2xl border border-[rgba(255,255,255,0.6)] bg-white/85 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.35)]">
+            <section className="rounded-2xl border border-[#e2e8f0] bg-white shadow-[0_12px_30px_-24px_rgba(15,23,42,0.35)]">
               <button
                 type="button"
                 onClick={() => setOpenPrefs((v) => !v)}

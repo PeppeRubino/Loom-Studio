@@ -57,6 +57,7 @@ export const HomePage = () => {
   const [category, setCategory] = useState<string | undefined>();
   const [color, setColor] = useState<string | undefined>();
   const [season, setSeason] = useState<string | undefined>();
+  const [openFilter, setOpenFilter] = useState<'category' | 'color' | 'season' | null>(null);
   const [newItem, setNewItem] = useState<Item>(emptyNewItem);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [tagDraft, setTagDraft] = useState("");
@@ -518,9 +519,30 @@ export const HomePage = () => {
           />
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          <FilterPill label={t('home.filter.category', 'Capo')} options={categoryOptions} value={category} onChange={setCategory} />
-          <FilterPill label={t('home.filter.color', 'Colore')} options={colorOptions} value={color} onChange={setColor} />
-          <FilterPill label={t('home.filter.season', 'Stagione')} options={seasonOptions} value={season} onChange={setSeason} />
+          <FilterPill
+            label={t('home.filter.category', 'Capo')}
+            options={categoryOptions}
+            value={category}
+            onChange={setCategory}
+            open={openFilter === 'category'}
+            onOpenChange={(next) => setOpenFilter(next ? 'category' : (prev) => (prev === 'category' ? null : prev))}
+          />
+          <FilterPill
+            label={t('home.filter.color', 'Colore')}
+            options={colorOptions}
+            value={color}
+            onChange={setColor}
+            open={openFilter === 'color'}
+            onOpenChange={(next) => setOpenFilter(next ? 'color' : (prev) => (prev === 'color' ? null : prev))}
+          />
+          <FilterPill
+            label={t('home.filter.season', 'Stagione')}
+            options={seasonOptions}
+            value={season}
+            onChange={setSeason}
+            open={openFilter === 'season'}
+            onOpenChange={(next) => setOpenFilter(next ? 'season' : (prev) => (prev === 'season' ? null : prev))}
+          />
           {!creationMode && (
             <Button variant="primary" className="rounded-full px-4" onClick={() => setCreationMode(true)}>
               <Plus size={14} className="mr-2" /> {t('home.addItem')}
