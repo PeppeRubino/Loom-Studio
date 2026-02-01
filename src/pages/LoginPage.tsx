@@ -92,12 +92,6 @@ export const LoginPage = () => {
             <span>{t('login.google')}</span>
           </Button>
 
-          <div className="flex items-center gap-2 text-[12px] uppercase tracking-[0.3em] text-[#cbd5e1]">
-            <span className="h-px flex-1 bg-[#e2e8f0]" />
-            <span>{t('common.or', 'oppure')}</span>
-            <span className="h-px flex-1 bg-[#e2e8f0]" />
-          </div>
-
           <Button
             type="button"
             onClick={signInAsGuest}
