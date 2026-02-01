@@ -38,9 +38,7 @@ export const LoginPage = () => {
     <div className="user-select-none flex min-h-screen items-center justify-center px-4 py-10">
       <Card className="w-full max-w-md bg-white/80 p-6 ">
         <div className="mb-5 space-y-1 text-center">
-          <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-sm">
-            <img src={logo} alt="Loom" className="h-10 w-10 object-contain" />
-          </div>
+          <img src={logo} alt="Loom" className="mx-auto h-12 w-12 object-contain" />
           <p className="text-lg font-semibold text-[#0f172a]">{t('login.title')}</p>
           <p className="text-sm text-[#475569]">{t('login.subtitle')}</p>
         </div>
