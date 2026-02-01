@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/Loom-Studio/icon.png" />
+    <link rel="icon" type="image/x-icon" href="/Loom-Studio/icon.ico" />
+    <link rel="apple-touch-icon" href="/Loom-Studio/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loom Studio</title>
+    <script type="module" crossorigin src="/Loom-Studio/assets/index-D7D3au-C.js"></script>
+    <link rel="modulepreload" crossorigin href="/Loom-Studio/assets/vendor-77yDWcJJ.js">
+    <link rel="modulepreload" crossorigin href="/Loom-Studio/assets/firebase-DCzW8K6T.js">
+    <link rel="modulepreload" crossorigin href="/Loom-Studio/assets/router-YYQTkf18.js">
+    <link rel="stylesheet" crossorigin href="/Loom-Studio/assets/index-B7zV1iTP.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const redirect = params.get("redirect");
+        if (!redirect) return;
+        params.delete("redirect");
+        const base = "/Loom-Studio/".replace(/\/$/, "");
+        const rest = params.toString();
+        const next = base + redirect + (rest ? "?" + rest : "");
+        window.history.replaceState(null, "", next);
+      })();
+    </script>
+  </body>
+</html>
