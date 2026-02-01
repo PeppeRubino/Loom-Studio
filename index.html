@@ -2,14 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/icon.png" />
-    <link rel="icon" type="image/x-icon" href="/icon.ico" />
-    <link rel="apple-touch-icon" href="/icon.png" />
+    <link rel="icon" type="image/png" href="%BASE_URL%icon.png" />
+    <link rel="icon" type="image/x-icon" href="%BASE_URL%icon.ico" />
+    <link rel="apple-touch-icon" href="%BASE_URL%icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loom</title>
+    <title>Loom Studio</title>
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const redirect = params.get("redirect");
+        if (!redirect) return;
+        params.delete("redirect");
+        const base = "%BASE_URL%".replace(/\/$/, "");
+        const rest = params.toString();
+        const next = base + redirect + (rest ? "?" + rest : "");
+        window.history.replaceState(null, "", next);
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
